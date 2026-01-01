@@ -1,0 +1,19 @@
+body {
+  padding-top: 70px;
+  background: #f7f7f7;
+}
+
+.hero {
+  min-height: 90vh;
+  background: #006241;
+  color: white;
+}
+
+.hero-img {
+  max-width: 380px;
+}
+
+.card img {
+  height: 230px;
+  object-fit: cover;
+}
