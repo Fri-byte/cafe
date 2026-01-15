@@ -128,9 +128,8 @@
         </div>
 
         
-        <div class="row g-4">
-
-            <div class="col-md-4">
+        <div class="row g-4" id="menuItems">
+          <div class="col-md-4">
                 <div class="card h-100 shadow-sm">
                     <img src="image/BenefitsOfCoffee_600x450.jpg" class="card-img-top" alt="Coffee">
                     <div class="card-body text-center">
@@ -173,7 +172,8 @@
             </div>
 
         </div>
-    </div>
+        </div>
+
 </section>
 
 
@@ -216,6 +216,53 @@
         localStorage.setItem("coffeePoints", points);
     }
 </script>
+<script>
+  let products = JSON.parse(localStorage.getItem("products")) || [
+    {
+      name: "Caramel Latte",
+      price: 180,
+      image: "image/Iced-Caramel-Latte_4-ig.jpg",
+      visible: true
+    },
+    {
+      name: "Mocha Frappe",
+      price: 200,
+      image: "image/mocha-frappuccino-recipe-main.jpg",
+      visible: true
+    },
+    {
+      name: "Espresso",
+      price: 150,
+      image: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0",
+      visible: true
+    }
+  ];
+
+  localStorage.setItem("products", JSON.stringify(products));
+
+  const menu = document.getElementById("menuItems");
+
+  products.forEach(p => {
+    if (p.visible) {
+      menu.innerHTML += `
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0 rounded-4">
+            <img src="${p.image}" class="card-img-top rounded-top-4">
+            <div class="card-body text-center">
+              <h5>${p.name}</h5>
+              <p>₱${p.price}</p>
+              <button class="btn btn-success"
+                onclick="addToCart('${p.name}', ${p.price})">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  });
+</script>
+
 
 </body>
 </html>
