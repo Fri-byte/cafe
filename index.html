@@ -173,50 +173,7 @@
 
         </div>
         </div>
-
-</section>
-
-
-
-<footer class="bg-dark text-white text-center py-3">
-  © 2025 CoffeeHouse
-</footer>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-<script>
-    
-    let points = localStorage.getItem("coffeePoints")
-        ? parseInt(localStorage.getItem("coffeePoints"))
-        : 0;
-
-    document.getElementById("points").innerText = points;
-
-    
-    function earnPoints(amount) {
-        points += amount;
-        updatePoints();
-    }
-
-    
-    function redeemItem(cost, itemName) {
-        if (points >= cost) {
-            points -= cost;
-            updatePoints();
-            alert("🎉 You redeemed: " + itemName);
-        } else {
-            alert(" Not enough points. Buy more coffee!");
-        }
-    }
-
-    
-    function updatePoints() {
-        document.getElementById("points").innerText = points;
-        localStorage.setItem("coffeePoints", points);
-    }
-</script>
-<script>
+        <script>
   let products = JSON.parse(localStorage.getItem("products")) || [
     {
       name: "Caramel Latte",
@@ -262,6 +219,55 @@
     }
   });
 </script>
+
+</section>
+
+
+
+<footer class="bg-dark text-white text-center py-3">
+  © 2025 CoffeeHouse
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+    
+    let points = localStorage.getItem("coffeePoints")
+        ? parseInt(localStorage.getItem("coffeePoints"))
+        : 0;
+
+    document.getElementById("points").innerText = points;
+
+    
+    function earnPoints(amount) {
+        points += amount;
+        updatePoints();
+    }
+
+    
+    function redeemItem(cost, itemName) {
+        if (points >= cost) {
+            points -= cost;
+            updatePoints();
+            alert("🎉 You redeemed: " + itemName);
+        } else {
+            alert(" Not enough points. Buy more coffee!");
+        }
+    }
+
+    
+    function updatePoints() {
+        document.getElementById("points").innerText = points;
+        localStorage.setItem("coffeePoints", points);
+    }
+</script>
+<script src="ajax.js"></script>
+<script>
+  loadProducts();
+  setInterval(loadProducts, 2000);
+</script>
+
 
 
 </body>
