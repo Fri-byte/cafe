@@ -1,274 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CoffeeHouse</title>
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Au Bon Café - Where Rich Flavors Meet Warm Experiences</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold text-success" href="#">CoffeeHouse</a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Rewards</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Stores</a></li>
-        <li class="nav-item"><a class="nav-link" href="#" id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-<section class="hero d-flex align-items-center">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 hero-text">
-        <h1 class="display-5 fw-bold">It’s not just coffee.<br>It’s CoffeeHouse.</h1>
-        <p class="lead">Handcrafted beverages made with passion.</p>
-        <button class="btn btn-light btn-lg rounded-pill" onclick="scrollToMenu()">Order Now</button>
-      </div>
-      <div class="col-md-6 text-center">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-             class="img-fluid rounded-4 hero-img">
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="py-5" id="menu">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-5">Featured Drinks</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card shadow-sm border-0 rounded-4">
-          <img src="image/Iced-Caramel-Latte_4-ig.jpg" class="card-img-top rounded-top-4">
-          <div class="card-body">
-            <h5>Caramel Latte</h5>
-            <p>₱180</p>
-            <button class="btn btn-success" onclick="addToCart('Caramel Latte',180)">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm border-0 rounded-4">
-          <img src="image/mocha-frappuccino-recipe-main.jpg" class="card-img-top rounded-top-4">
-          <div class="card-body">
-            <h5>Mocha Frappe</h5>
-            <p>₱200</p>
-            <button class="btn btn-success" onclick="addToCart('Mocha Frappe',200)">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm border-0 rounded-4">
-          <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" class="card-img-top rounded-top-4">
-          <div class="card-body">
-            <h5>Espresso</h5>
-            <p>₱150</p>
-            <button class="btn btn-success" onclick="addToCart('Espresso',150)">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<div class="modal fade" id="cartModal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Your Cart</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <ul id="cartItems" class="list-group mb-3"></ul>
-        <h5>Total: ₱<span id="total">0</span></h5>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-success" onclick="checkout()">Checkout</button>
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<section id="rewards" class="py-5 bg-light">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-cream shadow-sm fixed-top">
     <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Coffee Rewards</h2>
-            <p class="text-muted">Earn points & redeem exclusive treats</p>
+      <a class="navbar-brand fw-bold" href="#home">
+        <div class="logo-circle">
+          <span class="logo-icon">☕</span>
+          <span class="logo-text">AU BON CAFÉ</span>
         </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#new-arrivals">New Arrivals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-       
-        <div class="card mb-4 text-center shadow-sm">
-            <div class="card-body">
-                <h4>Your Points: <span id="points">0</span> ⭐</h4>
-                <button class="btn btn-success mt-2" onclick="earnPoints(10)">
-                    Buy Coffee (+10 points)
-                </button>
-            </div>
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center min-vh-100 pt-5">
+        <div class="col-lg-6">
+          <div class="coffee-bean-decoration">☕</div>
+          <h1 class="hero-title">Where rich flavors meet warm experiences and meaningful connections</h1>
+          <p class="hero-subtitle">Brewed with care, every cup delivers cozy moments and unforgettable flavors.</p>
+          <h2 class="hero-tagline">Sip, savor, and create the moments that truly matter.</h2>
+          <button class="btn btn-brown btn-lg rounded-pill mt-4" onclick="scrollToSection('new-arrivals')">Your favorite brew</button>
         </div>
-
-        
-        <div class="row g-4" id="menuItems">
-          <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="image/BenefitsOfCoffee_600x450.jpg" class="card-img-top" alt="Coffee">
-                    <div class="card-body text-center">
-                        <h5>Free Coffee ☕</h5>
-                        <p>30 Points</p>
-                        <button class="btn btn-primary"
-                                onclick="redeemItem(30, 'Free Coffee')">
-                            Redeem
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="image/chocolate-pastry-puffs-5-2.jpg" class="card-img-top" alt="Pastry">
-                    <div class="card-body text-center">
-                        <h5>Free Pastry 🥐</h5>
-                        <p>40 Points</p>
-                        <button class="btn btn-primary"
-                                onclick="redeemItem(40, 'Free Pastry')">
-                            Redeem
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="image/brown-cafe-gift-voucher-design-template-cbcdd9b50f0bb26755efca8392a44c8c_screen.jpg" class="card-img-top" alt="Voucher">
-                    <div class="card-body text-center">
-                        <h5>Discount Voucher 💸</h5>
-                        <p>50 Points</p>
-                        <button class="btn btn-primary"
-                                onclick="redeemItem(50, 'Discount Voucher')">
-                            Redeem
-                        </button>
-                    </div>
-                </div>
-            </div>
-
+        <div class="col-lg-6 text-center">
+          <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" 
+                 alt="Coffee" 
+                 class="img-fluid rounded-4 hero-img">
+            <div class="coffee-bean-decoration bean-1">☕</div>
+            <div class="coffee-bean-decoration bean-2">☕</div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h5 class="text-uppercase text-muted mb-2">Sip the Magic, Savor the Moment</h5>
+          <h1 class="fw-bold mb-3">What's your <span class="text-brown">story?</span></h1>
+          <div class="mb-3">
+            <h3 class="d-inline text-brown">$4.9</h3>
+            <span class="text-warning ms-2">★★★★★</span>
+          </div>
+          <p class="lead mb-4">
+            A smooth blend of rich espresso, creamy froth, and hints of vanilla and caramel—crafted to refresh and delight with every sip.
+          </p>
+          <button class="btn btn-brown btn-lg rounded-pill mb-4" onclick="addToCart('BeanBreeze', 4.9)">Add to Cart</button>
+          <div class="d-flex gap-2">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" 
+                 class="thumb-img" 
+                 onclick="changeFeatured('https://images.unsplash.com/photo-1509042239860-f550ce710b93')">
+            <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" 
+                 class="thumb-img" 
+                 onclick="changeFeatured('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0')">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" 
+                 class="thumb-img" 
+                 onclick="changeFeatured('https://images.unsplash.com/photo-1511920170033-f8396924c348')">
+          </div>
         </div>
-        <script>
-  let products = JSON.parse(localStorage.getItem("products")) || [
-    {
-      name: "Caramel Latte",
-      price: 180,
-      image: "image/Iced-Caramel-Latte_4-ig.jpg",
-      visible: true
-    },
-    {
-      name: "Mocha Frappe",
-      price: 200,
-      image: "image/mocha-frappuccino-recipe-main.jpg",
-      visible: true
-    },
-    {
-      name: "Espresso",
-      price: 150,
-      image: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0",
-      visible: true
-    }
-  ];
-
-  localStorage.setItem("products", JSON.stringify(products));
-
-  const menu = document.getElementById("menuItems");
-
-  products.forEach(p => {
-    if (p.visible) {
-      menu.innerHTML += `
-        <div class="col-md-4">
-          <div class="card shadow-sm border-0 rounded-4">
-            <img src="${p.image}" class="card-img-top rounded-top-4">
-            <div class="card-body text-center">
-              <h5>${p.name}</h5>
-              <p>₱${p.price}</p>
-              <button class="btn btn-success"
-                onclick="addToCart('${p.name}', ${p.price})">
-                Add to Cart
-              </button>
+        <div class="col-lg-6 text-center">
+          <div class="featured-drink position-relative">
+            <img id="featuredImg" 
+                 src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" 
+                 class="img-fluid rounded-4">
+            <div class="featured-label text-center text-white fw-bold">
+              BeanBreeze
             </div>
           </div>
         </div>
-      `;
-    }
-  });
-</script>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <!-- New Arrivals Section -->
+  <section id="new-arrivals" class="new-arrivals-section py-5">
+    <div class="container">
+      <div class="section-banner mb-5">
+        <h2 class="section-title">NEW ARRIVALS</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="product-card">
+            <div class="product-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" 
+                   class="product-img" 
+                   alt="Caramel Swirl">
+              <div class="product-logo">AU BON CAFÉ</div>
+            </div>
+            <div class="product-label">CARAMEL SWIRL</div>
+            <p class="product-price">$5.2</p>
+            <button class="btn btn-brown btn-sm rounded-pill" onclick="addToCart('Caramel Swirl', 5.2)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-card">
+            <div class="product-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" 
+                   class="product-img" 
+                   alt="Mocha Bliss">
+              <div class="product-logo">AU BON CAFÉ</div>
+            </div>
+            <div class="product-label">MOCHA BLISS</div>
+            <p class="product-price">$5.5</p>
+            <button class="btn btn-brown btn-sm rounded-pill" onclick="addToCart('Mocha Bliss', 5.5)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-card">
+            <div class="product-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" 
+                   class="product-img" 
+                   alt="Vanilla Frost">
+              <div class="product-logo">AU BON CAFÉ</div>
+            </div>
+            <div class="product-label">VANILLA FROST</div>
+            <p class="product-price">$4.9</p>
+            <button class="btn btn-brown btn-sm rounded-pill" onclick="addToCart('Vanilla Frost', 4.9)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Services Section -->
+  <section id="services" class="services-section py-5">
+    <div class="container">
+      <div class="section-banner mb-5">
+        <h2 class="section-title">OUR SERVICES</h2>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <div class="service-item mb-4">
+            <div class="service-icon">☕</div>
+            <h4 class="service-title">PERFECT POUR</h4>
+            <p>Every cup at Au Bon Café is carefully brewed using premium beans, delivering rich flavors and a silky-smooth taste.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🍵</div>
+            <h4 class="service-title">YOUR WAY</h4>
+            <p>Customize your drink exactly how you like it —extra espresso shot, plant-based milk, or sugar-free options— your cup, your rules.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <div class="service-center-image">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" 
+                 class="img-fluid rounded-4" 
+                 alt="Coffee Service">
+            <div class="service-logo">AU BON CAFÉ</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-item mb-4">
+            <div class="service-icon">😊</div>
+            <h4 class="service-title">BOLD FLAVORS</h4>
+            <p>From classic espresso to seasonal favorites, discover a world of vibrant and unique coffee experiences.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🥐</div>
+            <h4 class="service-title">BEYOND COFFEE</h4>
+            <p>Treat yourself to freshly baked pastries, refreshing teas, and savory bites that perfectly complement your favorite brew.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="contact-form-card">
+            <h3 class="contact-form-title">CONTACT</h3>
+            <form id="contactForm">
+              <div class="mb-3">
+                <label class="form-label">NAME</label>
+                <input type="text" class="form-control" placeholder="ENTER YOUR NAME" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">EMAIL</label>
+                <input type="email" class="form-control" placeholder="ENTER YOUR EMAIL" required>
+              </div>
+              <button type="submit" class="btn btn-brown-outline btn-lg rounded-pill w-100">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="thank-you-card">
+            <h3 class="thank-you-title">THANK YOU!</h3>
+            <p>Every cup at Au Bon Café is brewed with care and crafted just for you. Your love for rich flavors, cozy moments, and good company inspires us every day. Sit back, sip, and savor—because you make our café experience truly special ☕💛</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer class="bg-dark text-white text-center py-3">
-  © 2025 CoffeeHouse
-</footer>
+  <!-- Subscribe Section -->
+  <section class="subscribe-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 text-center">
+          <div class="cafe-logo-circle mb-4">
+            <div class="logo-inner">AU BON CAFÉ</div>
+          </div>
+          <p class="cafe-description">Au Bon Café is all about rich flavors, warm moments, and genuine connections. From carefully crafted brews to our welcoming space, every sip creates something unforgettable.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <h3 class="cafe-tagline mb-4">Au Bon Cafe - Sip, Savor, Connect</h3>
+          <div class="cafe-logo-circle">
+            <div class="logo-inner">AU BON CAFÉ</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="subscribe-title mb-3">SUBSCRIBE</h4>
+          <div class="subscribe-form">
+            <input type="email" class="form-control mb-3" placeholder="ENTER YOUR EMAIL">
+            <button class="btn btn-brown btn-lg rounded-pill w-100">→</button>
+          </div>
+          <p class="subscribe-text mt-3">Join the club and sip your way to unforgettable moments!</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-text">Au Bon Cafe Au Bon Cafe Au Bon Cafe Au Bon Cafe Au Bon Cafe</div>
+    </div>
+  </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-<script>
-    
-    let points = localStorage.getItem("coffeePoints")
-        ? parseInt(localStorage.getItem("coffeePoints"))
-        : 0;
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <ul id="cartItems" class="list-group"></ul>
+          <div class="mt-3">
+            <strong>Total: $<span id="total">0</span></strong>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-brown" onclick="checkout()">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    document.getElementById("points").innerText = points;
-
-    
-    function earnPoints(amount) {
-        points += amount;
-        updatePoints();
-    }
-
-    
-    function redeemItem(cost, itemName) {
-        if (points >= cost) {
-            points -= cost;
-            updatePoints();
-            alert("🎉 You redeemed: " + itemName);
-        } else {
-            alert(" Not enough points. Buy more coffee!");
-        }
-    }
-
-    
-    function updatePoints() {
-        document.getElementById("points").innerText = points;
-        localStorage.setItem("coffeePoints", points);
-    }
-</script>
-<script src="ajax.js"></script>
-<script>
-  loadProducts();
-  setInterval(loadProducts, 2000);
-</script>
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
